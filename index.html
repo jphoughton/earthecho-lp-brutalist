@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Earth Echo Foods | Sip Your Way to Bliss</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100dvh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========== UTILITY ========== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-divider {
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+}
+
+.section-divider--red {
+  background: #FF3B3B;
+  height: 4px;
+}
+
+.section-divider--blue {
+  background: #0d4d8e;
+}
+
+/* ========== TYPOGRAPHY ========== */
+.headline {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.subheadline {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* ========== CTA BUTTONS ========== */
+.cta-btn {
+  display: inline-block;
+  background: #febf40;
+  color: #0a0a0a;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 18px 48px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.1s, background 0.2s;
+  animation: pulse-cta 2s infinite;
+}
+
+.cta-btn:hover {
+  background: #ffe08a;
+  transform: scale(1.03);
+  animation: none;
+}
+
+.cta-btn--red {
+  background: #FF3B3B;
+  color: #ffffff;
+}
+
+.cta-btn--red:hover {
+  background: #ff6b6b;
+}
+
+@keyframes pulse-cta {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(254, 191, 64, 0.6); }
+  50% { box-shadow: 0 0 0 12px rgba(254, 191, 64, 0); }
+}
+
+/* ========== URGENCY BANNER ========== */
+.urgency-banner {
+  background: #FF3B3B;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1000;
+}
+
+.urgency-banner .countdown {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: 10px;
+}
+
+.urgency-banner .countdown span {
+  background: #0a0a0a;
+  color: #ffffff;
+  padding: 2px 8px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+/* ========== TOP NAV ========== */
+.top-nav {
+  background: #0a0a0a;
+  border-bottom: 2px solid #ffffff;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.top-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-nav__logo img {
+  height: 40px;
+  width: auto;
+}
+
+.top-nav__viewers {
+  font-size: 13px;
+  color: #FF3B3B;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-nav__viewers .dot {
+  width: 8px;
+  height: 8px;
+  background: #FF3B3B;
+  display: inline-block;
+  animation: blink-dot 1.5s infinite;
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.top-nav__cta {
+  padding: 10px 28px;
+  font-size: 14px;
+  animation: none;
+}
+
+/* ========== HERO ========== */
+.hero {
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__badge {
+  display: inline-block;
+  background: #FF3B3B;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+}
+
+.hero__headline {
+  margin-bottom: 24px;
+}
+
+.hero__subheadline {
+  color: #cccccc;
+  max-width: 500px;
+  margin-bottom: 32px;
+}
+
+.hero__price {
+  margin-bottom: 32px;
+}
+
+.hero__price .price-old {
+  font-size: 1.5rem;
+  color: #FF3B3B;
+  text-decoration: line-through;
+  margin-right: 12px;
+}
+
+.hero__price .price-new {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #febf40;
+}
+
+.hero__image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__image img {
+  max-height: 500px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 60px rgba(13, 77, 142, 0.3));
+}
+
+.hero__image-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #FF3B3B;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  letter-spacing: 0.08em;
+}
+
+.hero__rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.hero__rating .stars {
+  display: flex;
+  gap: 3px;
+}
+
+.hero__rating .star-block {
+  width: 18px;
+  height: 18px;
+  background: #febf40;
+}
+
+.hero__rating .star-block--empty {
+  background: #333;
+}
+
+.hero__rating .rating-text {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ========== HEALTH UPGRADE ========== */
+.health-upgrade {
+  background: #111111;
+  padding: 80px 0;
+}
+
+.health-upgrade__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.health-upgrade__header .section-title {
+  margin-bottom: 16px;
+}
+
+.health-upgrade__header .subheadline {
+  color: #aaa;
+}
+
+.health-upgrade__benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+}
+
+.benefit-item {
+  border: 2px solid #333;
+  padding: 30px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color 0.2s;
+}
+
+.benefit-item:hover {
+  border-color: #0d4d8e;
+}
+
+.benefit-item__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #0d4d8e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.benefit-item__text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.benefit-item__text .asterisk {
+  color: #FF3B3B;
+  font-weight: 700;
+}
+
+/* ========== UPGRADE CATEGORIES ========== */
+.categories {
+  background: #0a0a0a;
+  padding: 80px 0;
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.category-card {
+  border: 2px solid #222;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #0d4d8e;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.category-card:hover::before {
+  transform: scaleX(1);
+}
+
+.category-card:hover {
+  border-color: #0d4d8e;
+  background: #111;
+}
+
+.category-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.category-card__label {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ========== PRODUCTS ========== */
+.products {
+  background: #111;
+  padding: 80px 0;
+}
+
+.products__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.products__header .section-title {
+  margin-bottom: 0;
+}
+
+.products__selling-fast {
+  background: #FF3B3B;
+  color: #fff;
+  padding: 8px 20px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: pulse-selling 1.5s infinite;
+}
+
+@keyframes pulse-selling {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.product-card {
+  border: 2px solid #333;
+  background: #0a0a0a;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.product-card:hover {
+  border-color: #febf40;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FF3B3B;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  z-index: 2;
+}
+
+.product-card__image {
+  padding: 30px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  border-bottom: 2px solid #333;
+}
+
+.product-card__image img {
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.product-card__info {
+  padding: 24px;
+}
+
+.product-card__name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.product-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.product-card__rating .stars {
+  display: flex;
+  gap: 2px;
+}
+
+.product-card__rating .star-block {
+  width: 14px;
+  height: 14px;
+  background: #febf40;
+}
+
+.product-card__rating .review-count {
+  font-size: 13px;
+  color: #888;
+}
+
+.product-card__pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.product-card__pricing .price-old {
+  font-size: 1rem;
+  color: #FF3B3B;
+  text-decoration: line-through;
+}
+
+.product-card__pricing .price-new {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.product-card .cta-btn {
+  display: block;
+  width: 100%;
+  font-size: 0.95rem;
+  padding: 14px;
+}
+
+/* ========== VALUE PROPS ========== */
+.value-props {
+  background: #0d4d8e;
+  padding: 50px 0;
+}
+
+.value-props__title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+}
+
+.value-props__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+}
+
+.value-prop {
+  text-align: center;
+  padding: 20px 10px;
+  border-right: 2px solid rgba(255,255,255,0.2);
+}
+
+.value-prop:last-child {
+  border-right: none;
+}
+
+.value-prop__icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.value-prop__text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+/* ========== REVIEWS ========== */
+.reviews {
+  background: #0a0a0a;
+  padding: 80px 0;
+}
+
+.reviews__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.review-card {
+  border: 2px solid #333;
+  padding: 32px;
+  position: relative;
+}
+
+.review-card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.review-card__avatar {
+  width: 50px;
+  height: 50px;
+  background: #0d4d8e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.review-card__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card__name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.review-card__verified {
+  font-size: 12px;
+  color: #69CE82;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review-card__stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+
+.review-card__stars .star-block {
+  width: 16px;
+  height: 16px;
+  background: #febf40;
+}
+
+.review-card__body {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* ========== SUBSCRIBE & SAVE ========== */
+.subscribe {
+  background: #111;
+  padding: 80px 0;
+}
+
+.subscribe__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 3px solid #febf40;
+}
+
+.subscribe__content {
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subscribe__badge {
+  display: inline-block;
+  background: #febf40;
+  color: #0a0a0a;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.subscribe__content .section-title {
+  margin-bottom: 20px;
+}
+
+.subscribe__content p {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.subscribe__visual {
+  background: #0d4d8e;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.subscribe__visual .big-save {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.subscribe__visual .save-sub {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.subscribe__visual .free-shipping {
+  font-size: 1rem;
+  color: #febf40;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ========== GIVES BACK ========== */
+.gives-back {
+  background: #0a0a0a;
+  padding: 80px 0;
+}
+
+.gives-back__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gives-back__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.gives-back-card {
+  border: 2px solid #333;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.gives-back-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.gives-back-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+  color: #69CE82;
+}
+
+.gives-back-card__text {
+  font-size: 0.95rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+/* ========== AS SEEN IN ========== */
+.as-seen-in {
+  background: #111;
+  padding: 50px 0;
+  border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+}
+
+.as-seen-in__title {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.as-seen-in__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.as-seen-in__logos span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #555;
+  padding: 8px 16px;
+  border: 2px solid #333;
+}
+
+/* ========== MISSION ========== */
+.mission {
+  background: #0a0a0a;
+  padding: 80px 0;
+}
+
+.mission__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission__inner .section-title {
+  margin-bottom: 24px;
+  color: #0d4d8e;
+}
+
+.mission__inner p {
+  font-size: 1.2rem;
+  color: #aaa;
+  line-height: 1.7;
+}
+
+/* ========== BLOG / RECIPES ========== */
+.blog {
+  background: #111;
+  padding: 80px 0;
+}
+
+.blog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.blog__tabs {
+  display: flex;
+  gap: 0;
+}
+
+.blog__tab {
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 2px solid #333;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.2s;
+}
+
+.blog__tab--active, .blog__tab:hover {
+  background: #0d4d8e;
+  border-color: #0d4d8e;
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.blog-card {
+  border: 2px solid #333;
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.blog-card:hover {
+  border-color: #0d4d8e;
+}
+
+.blog-card__category {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0d4d8e;
+  margin-bottom: 8px;
+}
+
+.blog-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.blog-card__read-more {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #febf40;
+}
+
+/* ========== REFERRAL ========== */
+.referral {
+  background: #FF3B3B;
+  padding: 60px 0;
+}
+
+.referral__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.referral__content .headline {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 16px;
+}
+
+.referral__content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+
+.referral__cta-area {
+  text-align: center;
+}
+
+.referral .cta-btn {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 20px 50px;
+}
+
+.referral .cta-btn:hover {
+  background: #222;
+}
+
+/* ========== FINAL CTA ========== */
+.final-cta {
+  background: #0a0a0a;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+}
+
+.final-cta__countdown {
+  font-size: 1rem;
+  color: #FF3B3B;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+.final-cta .headline {
+  margin-bottom: 24px;
+}
+
+.final-cta p {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: #111;
+  border-top: 3px solid #333;
+  padding: 40px 0 120px;
+  text-align: center;
+}
+
+.footer__logo img {
+  height: 30px;
+  margin: 0 auto 16px;
+}
+
+.footer__text {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.footer__disclaimer {
+  font-size: 0.75rem;
+  color: #444;
+  margin-top: 16px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* ========== STICKY BAR ========== */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0a0a0a;
+  border-top: 3px solid #febf40;
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.sticky-bar--visible {
+  transform: translateY(0);
+}
+
+.sticky-bar__product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sticky-bar__product img {
+  height: 45px;
+  width: 45px;
+  object-fit: contain;
+}
+
+.sticky-bar__product-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.sticky-bar__pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sticky-bar__pricing .price-old {
+  color: #FF3B3B;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.sticky-bar__pricing .price-new {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.sticky-bar .cta-btn {
+  padding: 12px 32px;
+  font-size: 0.9rem;
+  animation: pulse-cta 1.5s infinite;
+}
+
+/* ========== SCROLL ANIMATIONS ========== */
+.reveal-left, .reveal-right, .reveal-up {
+  opacity: 0;
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+.reveal-right {
+  transform: translateX(60px);
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero__subheadline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__rating {
+    justify-content: center;
+  }
+
+  .hero__image {
+    order: -1;
+  }
+
+  .hero__image img {
+    max-height: 350px;
+  }
+
+  .categories__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .products__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products__header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .value-props__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .value-prop {
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+  }
+
+  .value-prop:nth-child(3) {
+    border-right: none;
+  }
+
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subscribe__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .gives-back__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .referral__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .referral__cta-area {
+    text-align: center;
+  }
+
+  .as-seen-in__logos {
+    gap: 16px;
+  }
+
+  .as-seen-in__logos span {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .sticky-bar {
+    gap: 12px;
+  }
+
+  .sticky-bar__product-name {
+    display: none;
+  }
+
+  .top-nav__viewers {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-props__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-prop:nth-child(3) {
+    border-right: 2px solid rgba(255,255,255,0.2);
+  }
+
+  .value-prop:nth-child(2n) {
+    border-right: none;
+  }
+
+  .blog__tabs {
+    flex-wrap: wrap;
+  }
+
+  .blog__tab {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .cta-btn {
+    padding: 16px 32px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .sticky-bar {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .sticky-bar .cta-btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+
+  .urgency-banner {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  .sticky-bar {
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  }
+
+  .sticky-bar__product-name {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero__headline {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .products__grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .categories__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .gives-back__grid {
+    gap: 16px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .sticky-bar .cta-btn {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Touch targets */
+a, button, .cta-btn, [role="button"] {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+
+<!-- ========== URGENCY BANNER ========== -->
+<div class="urgency-banner" id="urgency-banner">
+  <span>FLASH SALE ENDS IN</span>
+  <span class="countdown">
+    <span id="cd-hours">00</span>:<span id="cd-minutes">00</span>:<span id="cd-seconds">00</span>
+  </span>
+  <span>&mdash; UP TO 12% OFF SITEWIDE</span>
+</div>
+
+<!-- ========== TOP NAV ========== -->
+<nav class="top-nav">
+  <div class="container">
+    <a href="https://shop.earthechofoods.com/collections/all-products" class="top-nav__logo">
+      <img src="https://shop.earthechofoods.com/cdn/shop/files/earth-echo-logo-white-1088.png?v=1669400554&width=500" alt="Earth Echo Foods" loading="eager">
+    </a>
+    <div class="top-nav__viewers">
+      <span class="dot"></span>
+      <span id="viewer-count">127</span> people viewing now
+    </div>
+    <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn top-nav__cta">SHOP NOW</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__content reveal-left">
+      <div class="hero__badge">SELLING FAST</div>
+      <div class="hero__rating">
+        <div class="stars">
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+        </div>
+        <span class="rating-text">4.9/5 &mdash; 139 REVIEWS</span>
+      </div>
+      <h1 class="headline hero__headline">SIP YOUR WAY<br>TO BLISS</h1>
+      <p class="subheadline hero__subheadline">This creamy elixir makes for a soothing nightcap that puts an end to night time cravings.</p>
+      <div class="hero__price">
+        <span class="price-old">$79.99</span>
+        <span class="price-new">$69.95</span>
+      </div>
+      <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn">SHOP CACAO BLISS NOW</a>
+    </div>
+    <div class="hero__image reveal-right">
+      <div class="hero__image-badge">SAVE $10</div>
+      <img src="https://shop.earthechofoods.com/cdn/shop/files/Cacao_Bliss-2000x2000_copy.png?v=1765485771&width=533" alt="Cacao Bliss" loading="eager">
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== HEALTH UPGRADE ========== -->
+<section class="health-upgrade">
+  <div class="container">
+    <div class="health-upgrade__header reveal-up">
+      <h2 class="section-title">YOUR HEALTH IS ABOUT TO<br>GET A MAJOR UPGRADE</h2>
+      <p class="subheadline">Our flagship products are delicious superfood blends that help to:</p>
+    </div>
+    <div class="health-upgrade__benefits">
+      <div class="benefit-item reveal-left">
+        <div class="benefit-item__icon">01</div>
+        <div class="benefit-item__text">Curb occasional cravings <span class="asterisk">*</span></div>
+      </div>
+      <div class="benefit-item reveal-right">
+        <div class="benefit-item__icon">02</div>
+        <div class="benefit-item__text">Support healthy weight loss <span class="asterisk">*</span></div>
+      </div>
+      <div class="benefit-item reveal-left">
+        <div class="benefit-item__icon">03</div>
+        <div class="benefit-item__text">Provide daily energy <span class="asterisk">*</span></div>
+      </div>
+      <div class="benefit-item reveal-right">
+        <div class="benefit-item__icon">04</div>
+        <div class="benefit-item__text">Balance occasional stress <span class="asterisk">*</span></div>
+      </div>
+      <div class="benefit-item reveal-left">
+        <div class="benefit-item__icon">05</div>
+        <div class="benefit-item__text">And support more restful sleep <span class="asterisk">*</span></div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 40px;" class="reveal-up">
+      <p style="color: #888; font-size: 0.95rem; margin-bottom: 30px;">And that's not all! We also offer our top-rated Collagen Peptides (named Best Dairy-Free Collagen in 2022), and accessories for enhancing your Bliss experience.</p>
+      <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn">EXPLORE ALL PRODUCTS</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider section-divider--red"></div>
+
+<!-- ========== UPGRADE CATEGORIES ========== -->
+<section class="categories">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center; margin-bottom: 50px;">UPGRADE YOUR LIFE</h2>
+    <div class="categories__grid">
+      <div class="category-card reveal-up">
+        <span class="category-card__icon">&#9878;</span>
+        <div class="category-card__label">Weight Loss</div>
+      </div>
+      <div class="category-card reveal-up">
+        <span class="category-card__icon">&#9889;</span>
+        <div class="category-card__label">Energy</div>
+      </div>
+      <div class="category-card reveal-up">
+        <span class="category-card__icon">&#9790;</span>
+        <div class="category-card__label">Sleep</div>
+      </div>
+      <div class="category-card reveal-up">
+        <span class="category-card__icon">&#9883;</span>
+        <div class="category-card__label">Stress</div>
+      </div>
+      <div class="category-card reveal-up">
+        <span class="category-card__icon">&#10006;</span>
+        <div class="category-card__label">Cravings</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== MOST POPULAR PRODUCTS ========== -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="products__header">
+      <h2 class="section-title">MOST POPULAR PRODUCTS</h2>
+      <div class="products__selling-fast">SELLING FAST &mdash; LIMITED STOCK</div>
+    </div>
+    <div class="products__grid">
+
+      <!-- Product 1 -->
+      <div class="product-card reveal-left">
+        <div class="product-card__badge">SAVE 12%</div>
+        <div class="product-card__image">
+          <img src="https://shop.earthechofoods.com/cdn/shop/files/Cacao_Bliss-2000x2000_copy.png?v=1765485771&width=533" alt="Cacao Bliss" loading="lazy">
+        </div>
+        <div class="product-card__info">
+          <div class="product-card__name">Cacao Bliss</div>
+          <div class="product-card__rating">
+            <div class="stars">
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+            </div>
+            <span class="review-count">139 reviews</span>
+          </div>
+          <div class="product-card__pricing">
+            <span class="price-old">$79.99</span>
+            <span class="price-new">$69.95</span>
+          </div>
+          <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn">ADD TO CART</a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card reveal-up">
+        <div class="product-card__badge">BEST SELLER</div>
+        <div class="product-card__image">
+          <img src="https://shop.earthechofoods.com/cdn/shop/files/Golden_Bliss-2000x2000_copy.png?v=1765486579&width=533" alt="Golden Bliss" loading="lazy">
+        </div>
+        <div class="product-card__info">
+          <div class="product-card__name">Golden Bliss</div>
+          <div class="product-card__rating">
+            <div class="stars">
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+            </div>
+            <span class="review-count">23 reviews</span>
+          </div>
+          <div class="product-card__pricing">
+            <span class="price-old">$79.99</span>
+            <span class="price-new">$69.95</span>
+          </div>
+          <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn">ADD TO CART</a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card reveal-right">
+        <div class="product-card__badge">TOP RATED</div>
+        <div class="product-card__image">
+          <img src="https://shop.earthechofoods.com/cdn/shop/files/Multi_Collagen_Peptides-2000x2000_copy.png?v=1765485988&width=533" alt="Multi Collagen Peptides" loading="lazy">
+        </div>
+        <div class="product-card__info">
+          <div class="product-card__name">Multi Collagen Peptides</div>
+          <div class="product-card__rating">
+            <div class="stars">
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+              <div class="star-block"></div>
+            </div>
+            <span class="review-count">Best Dairy-Free 2022</span>
+          </div>
+          <div class="product-card__pricing">
+            <span class="price-old">$79.99</span>
+            <span class="price-new">$69.95</span>
+          </div>
+          <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn">ADD TO CART</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider section-divider--blue"></div>
+
+<!-- ========== VALUE PROPS ========== -->
+<section class="value-props">
+  <div class="container">
+    <div class="value-props__title">ALL OUR PRODUCTS ARE:</div>
+    <div class="value-props__grid">
+      <div class="value-prop reveal-up">
+        <span class="value-prop__icon">&#10005;</span>
+        <div class="value-prop__text">Gluten Free</div>
+      </div>
+      <div class="value-prop reveal-up">
+        <span class="value-prop__icon">&#10005;</span>
+        <div class="value-prop__text">Soy Free</div>
+      </div>
+      <div class="value-prop reveal-up">
+        <span class="value-prop__icon">&#10003;</span>
+        <div class="value-prop__text">Non-GMO</div>
+      </div>
+      <div class="value-prop reveal-up">
+        <span class="value-prop__icon">&#10005;</span>
+        <div class="value-prop__text">Dairy Free</div>
+      </div>
+      <div class="value-prop reveal-up">
+        <span class="value-prop__icon">&#10005;</span>
+        <div class="value-prop__text">No Artificial Sweeteners</div>
+      </div>
+      <div class="value-prop reveal-up">
+        <span class="value-prop__icon">&#9752;</span>
+        <div class="value-prop__text">Vegan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== REVIEWS ========== -->
+<section class="reviews">
+  <div class="container">
+    <div class="reviews__header reveal-up">
+      <h2 class="section-title">REAL PEOPLE. REAL RESULTS.</h2>
+      <p class="subheadline" style="color:#888; margin-top: 12px;">Verified buyer reviews</p>
+    </div>
+    <div class="reviews__grid">
+
+      <div class="review-card reveal-left">
+        <div class="review-card__header">
+          <div class="review-card__avatar">AC</div>
+          <div class="review-card__meta">
+            <span class="review-card__name">Angela C.</span>
+            <span class="review-card__verified">VERIFIED BUYER</span>
+          </div>
+        </div>
+        <div class="review-card__stars">
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+        </div>
+        <div class="review-card__body">
+          "is is my favorite all time thing I do for me.. every morning after my workout, I sit on my deck in my comfy chair and just seep in every bit of goodness from cacao bliss&hellip; love love love! I hate to run out, so I get the 5 pack every time I order&hellip;"
+        </div>
+      </div>
+
+      <div class="review-card reveal-right">
+        <div class="review-card__header">
+          <div class="review-card__avatar" style="background: #69CE82;">LO</div>
+          <div class="review-card__meta">
+            <span class="review-card__name">Lisa O.</span>
+            <span class="review-card__verified">VERIFIED BUYER</span>
+          </div>
+        </div>
+        <div class="review-card__stars">
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+          <div class="star-block"></div>
+        </div>
+        <div class="review-card__body">
+          "I heard about cacao bliss from a JP Sears video. It looked good so I decided to give it a try. I absolutely love it! I have it every morning in my coffee. It's delicious! I have told all my friends about my new favorite (and healthy) morning routine."
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider section-divider--red"></div>
+
+<!-- ========== SUBSCRIBE & SAVE ========== -->
+<section class="subscribe">
+  <div class="container">
+    <div class="subscribe__inner reveal-up">
+      <div class="subscribe__content">
+        <div class="subscribe__badge">NEVER RUN OUT</div>
+        <h2 class="section-title">MAKE SURE YOUR BLISS NEVER ENDS!</h2>
+        <p>Save up to $10 and get FREE shipping when you subscribe to receive your favorite products every 30 days.</p>
+        <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn">SUBSCRIBE & SAVE NOW</a>
+      </div>
+      <div class="subscribe__visual">
+        <div class="big-save">$10</div>
+        <div class="save-sub">OFF EVERY ORDER</div>
+        <div class="free-shipping">+ FREE SHIPPING</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== GIVES BACK ========== -->
+<section class="gives-back">
+  <div class="container">
+    <div class="gives-back__header reveal-up">
+      <h2 class="section-title">EARTH ECHO GIVES BACK</h2>
+    </div>
+    <div class="gives-back__grid">
+      <div class="gives-back-card reveal-left">
+        <span class="gives-back-card__icon">&#127795;</span>
+        <div class="gives-back-card__title">Eden Reforestation Projects</div>
+        <div class="gives-back-card__text">Planting a million trees to restore forests and create fair-wage employment for local communities.</div>
+      </div>
+      <div class="gives-back-card reveal-up">
+        <span class="gives-back-card__icon">&#9851;</span>
+        <div class="gives-back-card__title">Plastic Bank</div>
+        <div class="gives-back-card__text">Certified Plastic Positive &mdash; removing more plastic from the environment than we produce.</div>
+      </div>
+      <div class="gives-back-card reveal-right">
+        <span class="gives-back-card__icon">&#128167;</span>
+        <div class="gives-back-card__title">Charity: Water</div>
+        <div class="gives-back-card__text">Our founders traveled to Ethiopia to see firsthand the impact of clean water initiatives.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== AS SEEN IN ========== -->
+<section class="as-seen-in reveal-up">
+  <div class="container">
+    <div class="as-seen-in__title">AS SEEN IN</div>
+    <div class="as-seen-in__logos">
+      <span>ALLURE</span>
+      <span>US WEEKLY</span>
+      <span>PEOPLE</span>
+      <span>SHAPE</span>
+      <span>VIEWPOINT</span>
+      <span>DALLAS MORNING NEWS</span>
+      <span>MIAMI HERALD</span>
+      <span>THE OBSERVER</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MISSION ========== -->
+<section class="mission">
+  <div class="container">
+    <div class="mission__inner reveal-up">
+      <h2 class="section-title">OUR MISSION</h2>
+      <p>Earth Echo was created out of our love for Mother Earth and all she offers us. By tapping into her nutrient-dense 'medicine cabinet,' we've created the most potent and delicious superfood blends for optimizing your health.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider section-divider--blue"></div>
+
+<!-- ========== BLOG / RECIPES ========== -->
+<section class="blog">
+  <div class="container">
+    <div class="blog__header reveal-up">
+      <h2 class="section-title">LATEST NEWS & INFO</h2>
+      <div class="blog__tabs">
+        <button class="blog__tab blog__tab--active">SEE ALL</button>
+        <button class="blog__tab">RECIPES</button>
+        <button class="blog__tab">HEALTH TIPS</button>
+      </div>
+    </div>
+    <div class="blog__grid">
+      <div class="blog-card reveal-left">
+        <div class="blog-card__category">RECIPE</div>
+        <div class="blog-card__title">3-ingredient Blissed Out Golden Milk Latte</div>
+        <span class="blog-card__read-more">READ MORE &rarr;</span>
+      </div>
+      <div class="blog-card reveal-right">
+        <div class="blog-card__category">HEALTH TIPS</div>
+        <div class="blog-card__title">17 Healthy Snacks That Curb Hunger</div>
+        <span class="blog-card__read-more">READ MORE &rarr;</span>
+      </div>
+      <div class="blog-card reveal-left">
+        <div class="blog-card__category">HEALTH TIPS</div>
+        <div class="blog-card__title">Ashwagandha: 7 Benefits Of This Herbal Superfood</div>
+        <span class="blog-card__read-more">READ MORE &rarr;</span>
+      </div>
+      <div class="blog-card reveal-right">
+        <div class="blog-card__category">EDUCATION</div>
+        <div class="blog-card__title">What Are Superfoods? (And What Makes Them So Healthy?)</div>
+        <span class="blog-card__read-more">READ MORE &rarr;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider section-divider--red"></div>
+
+<!-- ========== REFERRAL ========== -->
+<section class="referral">
+  <div class="container">
+    <div class="referral__inner">
+      <div class="referral__content reveal-left">
+        <h2 class="headline">GET $50 WHEN YOU GIVE $50!</h2>
+        <p>Give your friends $50 off on their first order of $100+ and you'll get $50 in points for each successful referral!</p>
+      </div>
+      <div class="referral__cta-area reveal-right">
+        <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn">START REFERRING NOW</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta__countdown reveal-up">
+      SALE ENDS IN: <span id="cd-final-hours">00</span>H <span id="cd-final-minutes">00</span>M <span id="cd-final-seconds">00</span>S
+    </div>
+    <h2 class="headline reveal-up">DON'T WAIT.<br>YOUR BLISS<br>STARTS NOW.</h2>
+    <p class="reveal-up">Join thousands of happy customers who transformed their daily routine with Earth Echo superfoods.</p>
+    <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn cta-btn--large reveal-up" style="padding: 22px 60px; font-size: 1.3rem;">SHOP ALL PRODUCTS</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__logo">
+      <img src="https://shop.earthechofoods.com/cdn/shop/files/earth-echo-logo-white-1088.png?v=1669400554&width=500" alt="Earth Echo Foods" loading="lazy" style="height: 30px; width: auto;">
+    </div>
+    <div class="footer__text">&copy; 2026 Earth Echo Foods. All Rights Reserved.</div>
+    <div class="footer__disclaimer">* These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</div>
+  </div>
+</footer>
+
+<!-- ========== STICKY BAR ========== -->
+<div class="sticky-bar" id="sticky-bar">
+  <div class="sticky-bar__product">
+    <img src="https://shop.earthechofoods.com/cdn/shop/files/Cacao_Bliss-2000x2000_copy.png?v=1765485771&width=533" alt="Cacao Bliss">
+    <span class="sticky-bar__product-name">Cacao Bliss</span>
+  </div>
+  <div class="sticky-bar__pricing">
+    <span class="price-old">$79.99</span>
+    <span class="price-new">$69.95</span>
+  </div>
+  <a href="https://shop.earthechofoods.com/collections/all-products" class="cta-btn">ADD TO CART</a>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ========== COUNTDOWN TIMER (localStorage persisted, 24hr) ==========
+  const COUNTDOWN_KEY = 'earthecho_countdown_end';
+  let countdownEnd;
+
+  const stored = localStorage.getItem(COUNTDOWN_KEY);
+  if (stored && parseInt(stored) > Date.now()) {
+    countdownEnd = parseInt(stored);
+  } else {
+    countdownEnd = Date.now() + 24 * 60 * 60 * 1000;
+    localStorage.setItem(COUNTDOWN_KEY, countdownEnd.toString());
+  }
+
+  function updateCountdown() {
+    const now = Date.now();
+    let diff = Math.max(0, countdownEnd - now);
+
+    if (diff <= 0) {
+      // Reset the countdown
+      countdownEnd = Date.now() + 24 * 60 * 60 * 1000;
+      localStorage.setItem(COUNTDOWN_KEY, countdownEnd.toString());
+      diff = countdownEnd - Date.now();
+    }
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const pad = (n) => n.toString().padStart(2, '0');
+
+    // Banner countdown
+    const cdH = document.getElementById('cd-hours');
+    const cdM = document.getElementById('cd-minutes');
+    const cdS = document.getElementById('cd-seconds');
+    if (cdH) cdH.textContent = pad(hours);
+    if (cdM) cdM.textContent = pad(minutes);
+    if (cdS) cdS.textContent = pad(seconds);
+
+    // Final CTA countdown
+    const cdFH = document.getElementById('cd-final-hours');
+    const cdFM = document.getElementById('cd-final-minutes');
+    const cdFS = document.getElementById('cd-final-seconds');
+    if (cdFH) cdFH.textContent = pad(hours);
+    if (cdFM) cdFM.textContent = pad(minutes);
+    if (cdFS) cdFS.textContent = pad(seconds);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ========== FAKE VIEWER COUNT ==========
+  const viewerEl = document.getElementById('viewer-count');
+  if (viewerEl) {
+    let viewerCount = 87 + Math.floor(Math.random() * 80);
+    viewerEl.textContent = viewerCount;
+
+    setInterval(function() {
+      const delta = Math.floor(Math.random() * 7) - 3; // -3 to +3
+      viewerCount = Math.max(62, Math.min(213, viewerCount + delta));
+      viewerEl.textContent = viewerCount;
+    }, 3000);
+  }
+
+  // ========== STICKY BAR ==========
+  const stickyBar = document.getElementById('sticky-bar');
+  const heroSection = document.querySelector('.hero');
+
+  function checkStickyBar() {
+    if (!heroSection || !stickyBar) return;
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    if (heroBottom < 0) {
+      stickyBar.classList.add('sticky-bar--visible');
+    } else {
+      stickyBar.classList.remove('sticky-bar--visible');
+    }
+  }
+
+  window.addEventListener('scroll', checkStickyBar, { passive: true });
+  checkStickyBar();
+
+  // ========== INTERSECTION OBSERVER SCROLL ANIMATIONS ==========
+  const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(function(el) {
+      observer.observe(el);
+    });
+  } else {
+    // Fallback: reveal everything
+    revealElements.forEach(function(el) {
+      el.classList.add('revealed');
+    });
+  }
+
+  // ========== BLOG TABS (cosmetic) ==========
+  const blogTabs = document.querySelectorAll('.blog__tab');
+  blogTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      blogTabs.forEach(function(t) { t.classList.remove('blog__tab--active'); });
+      tab.classList.add('blog__tab--active');
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
